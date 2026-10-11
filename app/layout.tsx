@@ -29,7 +29,7 @@ export default function RootLayout({ children }: LayoutProps<"/">) {
       <body className="min-h-screen grid grid-cols-6 grid-cols-auto grid-rows-[auto_1fr]  h-screen w-screen  font-sans  overflow-hidden">
         <Sidebar />
         <Navbar />
-        <main className="col-span-4 row-span-1 p-1">{children}</main>
+        <main className="col-span-4 row-span-1 p-2">{children}</main>
         <Aisidebar />
       </body>
     </html>
