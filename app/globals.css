@@ -4,6 +4,11 @@
   --background: #ffffff;
   --foreground: #101010;
   --stone-dark: #191919;
+  --stone-mid: #303030;
+  --stone-light: #606060;
+
+  --green-light: #06df72;
+  --green-dark: #02592e;
 }
 
 @theme inline {
@@ -11,6 +16,12 @@
   --color-foreground: var(--foreground);
   --color-dark: var(--dark);
   --color-stone-dark: var(--stone-dark);
+  --color-stone-mid: var(--stone-mid);
+
+  --color-green-light: var(--green-light);
+  --color-green-dark: var(--green-dark);
+
+  --color-stone-light: var(--stone-light);
   --font-sans: var(--font-geist-sans);
   --font-mono: var(--font-geist-mono);
 }

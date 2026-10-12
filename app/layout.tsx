@@ -26,7 +26,7 @@ export default function RootLayout({ children }: LayoutProps<"/">) {
       lang="en"
       className={`${geistSans.variable} ${geistMono.variable} h-full antialiased`}
     >
-      <body className="min-h-screen grid grid-cols-6 grid-cols-auto grid-rows-[auto_1fr]  h-screen w-screen  font-sans  overflow-hidden">
+      <body className="min-h-screen grid grid-cols-[minmax(200px,1fr)_repeat(4,1fr)_minmax(200px,1fr)] grid-rows-[auto_1fr] h-screen w-screen  font-sans  overflow-hidden">
         <Sidebar />
         <Navbar />
         <main className="col-span-4 row-span-1 p-2">{children}</main>
