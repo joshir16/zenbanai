@@ -26,6 +26,12 @@
   --font-mono: var(--font-geist-mono);
 }
 
+@layer components {
+  .btn-active {
+    @apply rounded-lg bg-stone-mid border-[0.8] border-green-light;
+  }
+}
+
 @media (prefers-color-scheme: dark) {
   :root {
     --background: #101010;

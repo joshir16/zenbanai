@@ -9,7 +9,7 @@ const Sidebar = () => {
       <Logo />
 
       <div className="border-b-[0.7] border-stone-600 p-2 pb-5">
-        <button className="w-full h-full flex gap-2 items-center p-2 rounded-lg bg-stone-mid">
+        <button className="w-full h-full flex gap-2 items-center p-2 btn-active">
           <LayoutDashboard size={16} className="text-stone-400" />
           <p className="text-xs text-stone-400 tracking-widest">All Board</p>
         </button>

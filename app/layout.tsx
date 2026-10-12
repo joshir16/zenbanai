@@ -1,9 +1,9 @@
 import type { Metadata } from "next";
 import { Geist, Geist_Mono } from "next/font/google";
 import "./globals.css";
-import Sidebar from "./components/sidebar/Sidebar";
-import Aisidebar from "./components/aibar/Aisidebar";
-import { Navbar } from "./components/Navbar";
+import Navbar from "@/components/layout/Navbar";
+import Sidebar from "@/components/layout/Sidebar";
+import Aisidebar from "@/components/layout/Aisidebar";
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
