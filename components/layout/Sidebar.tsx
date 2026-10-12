@@ -2,6 +2,7 @@ import { LayoutDashboard, Plus } from "lucide-react";
 import React from "react";
 import Logo from "../ui/Logo";
 import Copyright from "../ui/Copyright";
+import Link from "next/link";
 
 const Sidebar = () => {
   return (
@@ -9,10 +10,13 @@ const Sidebar = () => {
       <Logo />
 
       <div className="border-b-[0.7] border-stone-600 p-2 pb-5">
-        <button className="w-full h-full flex gap-2 items-center p-2 btn-active">
+        <Link
+          href={"/"}
+          className="w-full h-full flex gap-2 items-center p-2 btn-active"
+        >
           <LayoutDashboard size={16} className="text-stone-400" />
           <p className="text-xs text-stone-400 tracking-widest">All Board</p>
-        </button>
+        </Link>
       </div>
 
       <div className="flex flex-1 flex-col gap-5  p-2 ">
@@ -40,23 +44,16 @@ const Sidebar = () => {
           </p>
 
           <ul className="flex-1 flex flex-col gap-2 text-sm text-stone-300">
-            <li className="flex justify-between items-center  p-2  border-b border-b-stone-mid hover:bg-stone-mid hover:rounded-lg">
-              <span className="">React</span>
-              <span className="font-light text-xs text-stone-400 ">
-                3 cards
-              </span>
-            </li>
-            <li className="flex justify-between items-center  p-2  border-b border-b-stone-mid hover:bg-stone-mid hover:rounded-lg">
-              <span className="">React</span>
-              <span className="font-light text-xs text-stone-400">3 cards</span>
-            </li>
-            <li className="flex justify-between items-center p-2 border-b border-b-stone-mid hover:bg-stone-mid hover:rounded-lg">
-              <span className="">React</span>
-              <span className="font-light text-xs text-stone-400">3 cards</span>
-            </li>
-            <li className="flex justify-between items-center p-2 border-b border-b-stone-mid hover:bg-stone-mid hover:rounded-lg">
-              <span className="">React</span>
-              <span className="font-light text-xs text-stone-400">3 cards</span>
+            <li className="border-b border-b-stone-mid hover:bg-stone-mid hover:rounded-lg">
+              <Link
+                href={"/"}
+                className="flex justify-between items-center p-2"
+              >
+                <span className="">React</span>
+                <span className="font-light text-xs text-stone-400 ">
+                  3 cards
+                </span>
+              </Link>
             </li>
           </ul>
         </nav>
