@@ -1,7 +1,7 @@
 import { LayoutDashboard, Plus } from "lucide-react";
 import React from "react";
-import Copyright from "./Copyright";
-import { Logo } from "./Logo";
+import Logo from "../ui/Logo";
+import Copyright from "../ui/Copyright";
 
 const Sidebar = () => {
   return (
