@@ -5,7 +5,7 @@
   --foreground: #101010;
   --stone-dark: #191919;
   --stone-mid: #303030;
-  --stone-light: #606060;
+  --stone-light: #6a6a6a;
 
   --green-light: #06df72;
   --green-dark: #02592e;
@@ -43,4 +43,15 @@ body {
   background: var(--background);
   color: var(--foreground);
   font-family: Arial, Helvetica, sans-serif;
+}
+
+::-webkit-scrollbar-track {
+  background: transparent;
+}
+::-webkit-scrollbar-thumb {
+  background: #3f3f46;
+  border-radius: 4px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: #52525b;
 }
