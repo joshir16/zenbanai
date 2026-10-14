@@ -1,22 +1,22 @@
 import { LayoutDashboard, Plus } from "lucide-react";
-import React from "react";
+import React, { Suspense } from "react";
 import Logo from "../ui/Logo";
 import Copyright from "../ui/Copyright";
-import Link from "next/link";
+import LinkBtn from "../ui/LinkBtn";
 
 const Sidebar = () => {
   return (
     <div className="col-span-1 row-span-2 flex flex-col gap-8 h-full min-w-50 w-full bg-dark z-50">
       <Logo />
 
-      <div className="border-b-[0.7] border-stone-600 p-2 pb-5">
-        <Link
-          href={"/"}
-          className="w-full h-full flex gap-2 items-center p-2 btn-active"
-        >
-          <LayoutDashboard size={16} className="text-stone-400" />
-          <p className="text-xs text-stone-400 tracking-widest">All Board</p>
-        </Link>
+      <div className="flex flex-col gap-2 border-b-[0.7] border-stone-600 p-2 pb-5">
+        <Suspense>
+          <LinkBtn
+            label="All Board"
+            href="/"
+            icon={<LayoutDashboard size={16} />}
+          />
+        </Suspense>
       </div>
 
       <div className="flex flex-1 flex-col gap-5  p-2 ">
@@ -28,7 +28,7 @@ const Sidebar = () => {
             Create new Board
           </label>
           <div className="flex justify-center items-center gap-2 p-1 text-sm w-full border-[0.7] border-stone-600 rounded-md">
-            <Plus size={24} className="text-stone-300" />
+            <Plus size={24} className="text-stone-light" />
             <input
               type="text"
               placeholder="New Board Title..."
@@ -45,15 +45,9 @@ const Sidebar = () => {
 
           <ul className="flex-1 flex flex-col gap-2 text-sm text-stone-300">
             <li className="border-b border-b-stone-mid hover:bg-stone-mid hover:rounded-lg">
-              <Link
-                href={"/"}
-                className="flex justify-between items-center p-2"
-              >
-                <span className="">React</span>
-                <span className="font-light text-xs text-stone-400 ">
-                  3 cards
-                </span>
-              </Link>
+              <Suspense>
+                <LinkBtn label="React" href="/boards/react" badge={2} />
+              </Suspense>
             </li>
           </ul>
         </nav>

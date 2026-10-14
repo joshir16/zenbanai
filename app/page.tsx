@@ -1,9 +1,9 @@
-import Header from "../components/layout/Header";
+import Header from "../components/ui/Header";
 
 export default function Home() {
   return (
     <div className="flex flex-col gap-2 h-full w-full min-h-0 bg-stone-dark font-sans rounded-xl p-4">
-      <Header />
+      <Header heading="All Boards" />
       <section className="flex-1 min-h-0 grid grid-cols-[repeat(auto-fit,250px)] auto-rows-min gap-4 overflow-y-auto">
         <div className="boardCard  grid grid-rows-[auto_1fr_auto] gap-2 p-4 min-h-35 max-h-38  border border-stone-light rounded-lg">
           <h3 className="text-sm/5 font-semibold leading-none tracking-wide">
