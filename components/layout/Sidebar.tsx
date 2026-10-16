@@ -3,8 +3,12 @@ import React, { Suspense } from "react";
 import Logo from "../ui/Logo";
 import Copyright from "../ui/Copyright";
 import LinkBtn from "../ui/LinkBtn";
+import getBoards from "@/lib/data";
 
-const Sidebar = () => {
+export default async function Sidebar() {
+  const boards = await getBoards();
+  console.log(boards);
+
   return (
     <div className="col-span-1 row-span-2 flex flex-col gap-8 h-full min-w-50 w-full bg-dark z-50">
       <Logo />
@@ -40,13 +44,20 @@ const Sidebar = () => {
 
         <nav className="flex-1 flex flex-col gap-2">
           <p className="flex justify-between items-center text-xs  px-2  text-stone-400 tracking-widest">
-            Board List <span className="font-light">3</span>
+            Board List <span className="font-light">{boards.length || ""}</span>
           </p>
 
           <ul className="flex-1 flex flex-col gap-2 text-sm text-stone-300">
-            <li className="border-b border-b-stone-mid hover:bg-stone-mid hover:rounded-lg">
+            <li className="border-b border-b-stone-mid hover:rounded-lg">
               <Suspense>
-                <LinkBtn label="React" href="/boards/react" badge={2} />
+                {boards.map((board) => (
+                  <LinkBtn
+                    key={board.id}
+                    label={board.title}
+                    href={`/boards/${board.id}`}
+                    badge={board.cards.length}
+                  />
+                ))}
               </Suspense>
             </li>
           </ul>
@@ -56,6 +67,4 @@ const Sidebar = () => {
       <Copyright />
     </div>
   );
-};
-
-export default Sidebar;
+}

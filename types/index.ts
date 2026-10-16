@@ -19,3 +19,7 @@ export interface Card {
   priority: CardPriority;
   tags?: string[] | null;
 }
+
+export interface BoardWithCards extends Board {
+  cards: Pick<Card, "id" | "status">[];
+}

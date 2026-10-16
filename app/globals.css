@@ -28,13 +28,13 @@
 
 @layer components {
   .btn-primary {
-    @apply w-full h-full flex items-center gap-2 p-2 text-stone-300;
-    @apply border-[0.8] border-[#101010] border-b-[0.8] border-b-stone-mid hover:bg-stone-mid hover:rounded-lg hover:border-stone-mid;
+    @apply w-full flex items-center gap-2 p-2 text-stone-400 rounded-lg transition-colors;
+    @apply border-[0.8px] border-transparent border-b-stone-mid hover:bg-stone-mid hover:border-stone-mid;
   }
 
   .btn-active {
-    @apply w-full h-full flex items-center gap-2 p-2 text-stone-300;
-    @apply rounded-lg border-[0.8] border-green-light hover:bg-stone-mid;
+    @apply w-full flex items-center gap-2 p-2 text-stone-400 rounded-lg transition-colors;
+    @apply border-[0.8px] border-green-light bg-stone-mid/40 hover:bg-stone-mid;
   }
 }
 
