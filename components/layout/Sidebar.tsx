@@ -48,18 +48,16 @@ export default async function Sidebar() {
           </p>
 
           <ul className="flex-1 flex flex-col gap-2 text-sm text-stone-300">
-            <li className="border-b border-b-stone-mid hover:rounded-lg">
-              <Suspense>
-                {boards.map((board) => (
-                  <LinkBtn
-                    key={board.id}
-                    label={board.title}
-                    href={`/boards/${board.id}`}
-                    badge={board.cards.length}
-                  />
-                ))}
-              </Suspense>
-            </li>
+            <Suspense>
+              {boards.map((board) => (
+                <LinkBtn
+                  key={board.id}
+                  label={board.title}
+                  href={`/boards/${board.id}`}
+                  badge={board.cards.length}
+                />
+              ))}
+            </Suspense>
           </ul>
         </nav>
       </div>
