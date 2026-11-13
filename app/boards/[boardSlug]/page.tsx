@@ -1,12 +1,14 @@
-import Header from "@/components/ui/Header";
-import React from "react";
+import { Suspense } from "react";
+import BoardContent from "@/components/ui/BoardContent";
 
-const page = () => {
+export default async function page({
+  params,
+}: {
+  params: Promise<{ boardSlug: string }>;
+}) {
   return (
-    <div className="h-full w-full bg-stone-dark font-sans rounded-xl p-2">
-      <Header heading="React" />
-    </div>
+    <Suspense fallback={<div>Loading cards...</div>}>
+      <BoardContent params={params} />
+    </Suspense>
   );
-};
-
-export default page;
+}

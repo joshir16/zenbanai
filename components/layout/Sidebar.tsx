@@ -3,7 +3,7 @@ import React, { Suspense } from "react";
 import Logo from "../ui/Logo";
 import Copyright from "../ui/Copyright";
 import LinkBtn from "../ui/LinkBtn";
-import getBoards from "@/lib/data";
+import getBoards from "@/lib/getBoards";
 
 export default async function Sidebar() {
   const boards = await getBoards();

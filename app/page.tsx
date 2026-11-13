@@ -1,4 +1,4 @@
-import getBoards from "@/lib/data";
+import getBoards from "@/lib/getBoards";
 import Header from "../components/ui/Header";
 import { Suspense } from "react";
 import BoardCard from "@/components/ui/BoardCard";
@@ -8,9 +8,9 @@ export default async function Home() {
   console.log(boards);
 
   return (
-    <Suspense fallback="{<div>Loading...</div>}">
+    <Suspense fallback={<div>Loading...</div>}>
       <div className="flex flex-col gap-2 h-full w-full min-h-0 bg-stone-dark font-sans rounded-xl p-4">
-        <Header heading="All Boards" />
+        <Header heading="All Boards" total={boards.length} />
 
         <section className="flex-1 min-h-0 grid grid-cols-[repeat(auto-fit,250px)] auto-rows-min gap-4 overflow-y-auto">
           {boards.map((board) => (

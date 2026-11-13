@@ -7,6 +7,22 @@ interface BoardCardProps {
 }
 
 const BoardCard = ({ board }: BoardCardProps) => {
+  let todoCount: number = 0;
+  let inProgressCount: number = 0;
+  let completedCount: number = 0;
+
+  board.cards?.forEach((card) => {
+    if (card.status === "todo") {
+      todoCount++;
+    }
+    if (card.status === "in-progress") {
+      inProgressCount++;
+    }
+    if (card.status === "done") {
+      completedCount++;
+    }
+  });
+
   return (
     <Link href={`/boards/${board.id}`}>
       <div className="boardCard grid grid-rows-[auto_1fr_auto] gap-2 p-4 min-h-full  border border-stone-light rounded-lg">
@@ -21,13 +37,13 @@ const BoardCard = ({ board }: BoardCardProps) => {
 
         <div className="self-end flex justify-between items-center w-full gap-1 text-[9px] ">
           <div className="flex-1 whitespace-nowrap p-1 text-blue-300 border border-blue-400 bg-blue-300/15 rounded-md">
-            Todo: 13
+            Todo: {todoCount}
           </div>
           <div className="flex-1 whitespace-nowrap p-1 text-yellow-500 border border-yellow-400 bg-yellow-300/15 rounded-md">
-            In Progress: 12
+            In Progress: {inProgressCount}
           </div>
           <div className="flex-1 whitespace-nowrap p-1 text-green-500 border border-green-400 bg-green-300/15 rounded-md">
-            Completed: 12
+            Completed: {completedCount}
           </div>
         </div>
       </div>
