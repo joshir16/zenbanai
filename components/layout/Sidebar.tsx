@@ -17,7 +17,7 @@ export default async function Sidebar() {
         <Suspense>
           <LinkBtn
             label="All Board"
-            href="/"
+            href="/boards"
             icon={<LayoutDashboard size={16} />}
           />
         </Suspense>
@@ -43,20 +43,24 @@ export default async function Sidebar() {
         </div>
 
         <nav className="flex-1 flex flex-col gap-2">
-          <p className="flex justify-between items-center text-xs  px-2  text-stone-400 tracking-widest">
-            Board List <span className="font-light">{boards.length || ""}</span>
-          </p>
+          {boards.length > 0 && (
+            <p className="flex justify-between items-center text-xs  px-2  text-stone-400 tracking-widest">
+              Board List{" "}
+              <span className="font-light">{boards.length || ""}</span>
+            </p>
+          )}
 
           <ul className="flex-1 flex flex-col gap-2 text-sm text-stone-300">
             <Suspense>
-              {boards.map((board) => (
-                <LinkBtn
-                  key={board.id}
-                  label={board.title}
-                  href={`/boards/${board.id}`}
-                  badge={board.cards.length}
-                />
-              ))}
+              {boards.length > 0 &&
+                boards.map((board) => (
+                  <LinkBtn
+                    key={board.id}
+                    label={board.title}
+                    href={`/boards/${board.id}`}
+                    badge={board.cards.length}
+                  />
+                ))}
             </Suspense>
           </ul>
         </nav>

@@ -1,5 +1,5 @@
 import getBoards from "@/lib/getBoards";
-import Header from "../components/ui/Header";
+import Header from "../../../components/ui/Header";
 import { Suspense } from "react";
 import BoardCard from "@/components/ui/BoardCard";
 
